@@ -6,13 +6,14 @@ module.exports = (sequelize) => {
   sequelize.define('genre', {
     id: {
       type: DataTypes.INTEGER,
-      primaryKey: true,
       autoIncrement: true,
+      primaryKey: true,
       allowNull: false,
     },
     nombre: {
       type: DataTypes.STRING,
       allowNull: false,
+      
     },
   });
 };

@@ -5,33 +5,33 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('game', {
     id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.UUID,
       primaryKey: true,
-      autoIncrement: true,
+      defaultValue: DataTypes.UUIDV4,
       allowNull: false,
     },
-    nombre: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    descripcion: {
-      type: DataTypes.TEXT,
+    description: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
-    plataformas: {
+    plataforms: {
       type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: false,
     },
-    imagen: {
+    image: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    fecha_lanzamiento: {
-      type: DataTypes.DATEONLY,
+    release_date: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
     rating: {
-      type: DataTypes.FLOAT,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
   });

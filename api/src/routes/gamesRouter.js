@@ -1,15 +1,10 @@
 const { Router } = require('express');
 const gamesRouter = Router();
-const getGameById = require('../controllers/getGameById');
-const getGameHandler = require('../controllers/getGameHandler');
+const getGameById = require('../handlers/getGameById');
+const getGameHandler = require('../handlers/getGameHandler');
+const createGameHandler = require('../handlers/createGameHandler')
 
+gamesRouter.post('/',createGameHandler)
 gamesRouter.get('/', getGameHandler);
-gamesRouter.get('/:id', async (req, res) => {
-  try {
-    const data = await getGameById(req, res);
-    res.status(200).json(data);
-  } catch (error) {
-    res.status(400).json('Prueba con otro ID =D');
-  }
-});
+gamesRouter.get('/:id', getGameById);
 module.exports = gamesRouter;
