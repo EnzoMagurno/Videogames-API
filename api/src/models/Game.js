@@ -12,6 +12,7 @@ module.exports = (sequelize) => {
     },
     name: {
       type: DataTypes.STRING,
+      unique:true,
       allowNull: false,
     },
     description: {
@@ -34,5 +35,5 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-  });
+  },{timestamps:false});
 };
