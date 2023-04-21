@@ -1,5 +1,6 @@
 require('dotenv').config();
 const getGameByIdController = require('../controllers/getGameByIdController')
+
 const getGameById = async (req, res) => {
   const {id} = req.params
   const source = isNaN(id) ? 'bdd' : 'api'
@@ -10,4 +11,5 @@ const getGameById = async (req, res) => {
     res.status(400).send({error:error.message})
   }
 };
+
 module.exports = getGameById;
